@@ -8,9 +8,9 @@ from models import User
 def token_required(flask_function):
     @wraps(flask_function)
     def decorated(*args, **kwargs):
-        taken = None
+        token = None
 
-        if 'x-access=token' in request.headers:
+        if 'x-access-token' in request.headers:
             token = request.headers['x-access-token'].split(' ')[1]
         if not token:
             return jsonify({'message: Token is missing.'}), 401
@@ -26,6 +26,7 @@ def token_required(flask_function):
                 return jsonify({'message': 'Token is invalid'})
         return flask_function(current_user_token, *args, **kwargs)
     return decorated
+
 
 class JSONEncoder(json.JSONEncoder):
     def default(self, obj):

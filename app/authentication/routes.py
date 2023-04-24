@@ -27,8 +27,8 @@ def signup():
         raise Exception('Invalid inputs: check your form')
     return render_template('sign_up.html', form = form)
 
-@auth.route('/signup', methods = ['GET', 'POST'])
-def signup():
+@auth.route('/signin', methods = ['GET', 'POST'])
+def signin():
     form = UserLoginForm()
 
     try:

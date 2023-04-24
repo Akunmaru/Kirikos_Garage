@@ -23,7 +23,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), nullable = True)
     password = db.Column(db.String, nullable = True, default = '')
     g_auth_verify = db.Column(db.Boolean, default = False)
-    token = db.Column(db.String, default = datetime.utcnow)
+    token = db.Column(db.String, default = '', unique = True)
 
     def __init__(self, email, first_name='', last_name='', password='', token='', g_auth_verify=False):
         self.id = self.set_id()
@@ -53,7 +53,7 @@ class Car(db.Model):
     model = db.Column(db.String(100), nullable = False)
     year = db.Column(db.String(50))
     color = db.Column(db.String(150))
-    user_token = db.Column(db.String, db.ForeignKey,('user.token'), nullable = False)
+    user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
     def __init__(self, make, model, year, color, user_token, id=''):
         self.id = self.set_id()
