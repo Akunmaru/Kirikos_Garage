@@ -3,61 +3,15 @@
 {% block content %} 
 <section class="bg-light text-center">
     <div class="bg-image">
-        <img src="../../static/images/HumbleStoreFront.jpg" class="img-fluid" alt="Dark alleyway ">
-        <div class="container p-5 bg-secondary">
-            <div class="row">
-                <div class="d-md-flex bg-secondary align-items-center justify-content-evenly">
-                    <h1 class="col text-center">{{ current_user.email}}'s user profile</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-    <section class="text-center">
-    <div class="container p-10">
-        <div class="row"><br>
-            <h3 class="p-3">Here are your profile details</h3>
-            <ul class="list-group">
-                <li class="list-group-item">Email: {{ current_user.email }}</li>
-                <li class="list-group-item">Token: {{ current_user.token }} </li> 
-            </ul>
-        </div>
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-4"></div>
-            <div class="col-3 p-10">
-                <img src="../../static/images/NeoTokyoCar.jpg" class="d-flex align-items-center justify-content-center p-50 img-fluid" alt="">
-            </div>
-            <div class="col-3"></div>
+        <img src="../../static/images/LanternLitAlleyway.jpg" class="img-fluid" alt="Dark alleyway ">
+        <div class="caption bg-opacity-10">
+            <br><br>
+            <span style="background-color: rgba(175, 57, 57, 0.489);" class="display-1 text-light">Here are your profile details</span>
+            <br>
+            <span style="background-color: rgba(175, 57, 57, 0.489);" class="display-6 text-light">Email: {{ current_user.email }}</span>
+            <br>
+            <span style="background-color: rgba(175, 57, 57, 0.489);" class="display-6 text-light">Token: {{ current_user.token }}</span> 
         </div>
     </div>
 </section>
-<!-- 
-    <section class="bg-secondary text-light text-center shadow mb-20">
-        <div class="container p-5 bg-secondary">
-            <div class="row">
-                <div class="d-md-flex bg-secondary align-items-center justify-content-evenly">
-                    <h1 class="col text-center">{{ current_user.email}}'s user profile</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="text-center">
-    <div class="container p-10">
-        <div class="row"><br>
-            <h3 class="p-3">Here are your profile details</h3>
-            <ul class="list-group">
-                <li class="list-group-item">Email: {{ current_user.email }}</li>
-                <li class="list-group-item">Token: {{ current_user.token }} </li> 
-            </ul>
-        </div>
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-4"></div>
-            <div class="col-3 p-10">
-                <img src="../../static/images/NeoTokyoCar.jpg" class="d-flex align-items-center justify-content-center p-50 img-fluid" alt="">
-            </div>
-            <div class="col-3"></div>
-        </div>
-    </div>
-    </section> -->
 {% endblock %}
